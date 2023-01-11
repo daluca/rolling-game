@@ -152,7 +152,7 @@ fn win_condition(
 fn collision_sounds(
     rapier_context: Res<RapierContext>,
     audio: Res<Audio>,
-    asset_server: Res<AssetServer>
+    asset_server: Res<AssetServer>,
 ) {
     let mut just_collided = false;
     for pair in rapier_context.contact_pairs() {
@@ -176,7 +176,7 @@ fn main() {
             ..default()
         }))
         .add_plugin(RapierPhysicsPlugin::<NoUserData>::pixels_per_meter(200.0))
-        .add_plugin(RapierDebugRenderPlugin::default())
+        // .add_plugin(RapierDebugRenderPlugin::default())
         .insert_resource(RapierConfiguration {
             gravity: Vec2::ZERO,
             ..default()
